@@ -9,6 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.Date;
 
 import static org.testng.Assert.assertEquals;
@@ -25,7 +26,7 @@ public class WebTest {
 	 public void setUp() {
 		 System.setProperty("webdriver.chrome.driver", ".\\src\\test\\resources\\drivers\\chromedriver.exe");
 		 driver = new ChromeDriver();
-		 wait = new WebDriverWait(driver, 10, 50);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(5), Duration.ofSeconds(10));
 		 driver.get("http://automationpractice.com/index.php");
 	 }
 
